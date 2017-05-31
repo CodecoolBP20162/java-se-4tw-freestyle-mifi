@@ -4,8 +4,9 @@ import com.codecool.mifi.dao.StudentDao;
 import com.codecool.mifi.model.CcClass;
 import com.codecool.mifi.model.Student;
 
-import java.util.List;
-import java.util.Stack;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.util.*;
 
 import static jdk.nashorn.internal.objects.NativeArray.pop;
 
@@ -14,21 +15,26 @@ import static jdk.nashorn.internal.objects.NativeArray.pop;
  */
 public class StudentDaoMem implements StudentDao {
 
-    private Stack studentStack = new Stack();
+    private Stack maleStack = new Stack();
+    private Stack femaleStack = new Stack();
 
     @Override
-    public void add(Student student) {
-        studentStack.push(student);
+    public void add(Student student, Stack stack) {
+        stack.push(student);
     }
 
     @Override
-    public Student getLast() {
-        return (Student) studentStack.pop();
+    public Student getLast(Stack stack) {
+        return (Student) stack.pop();
     }
 
     @Override
-    public Stack getAll() {
-        return studentStack;
+    public Stack getAll(String gender) {
+        if (gender == "female") {
+            return femaleStack;
+        }else{
+            return maleStack;
+        }
     }
 
 }

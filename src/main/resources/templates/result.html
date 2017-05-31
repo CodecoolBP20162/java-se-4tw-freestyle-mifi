@@ -6,8 +6,12 @@
         <meta charset="utf-8" />
         <meta name="author" content="Codecool" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <!-- Latest compiled and minified Jquery -->
         <script src="https://code.jquery.com/jquery-3.1.1.min.js"
                 integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+
+        <!-- Latest compiled and minified JavaScript -->
+
 
 
         <title>Singliton</title>
@@ -15,16 +19,10 @@
     </head>
     <body>
 
-    <form action="/quiz">
-        <label>Choose yourself: </label>
-        <input id="user_name" name="students" list="students" placeholder="Select"></input>
-        <datalist id="students">
-            <div th:each="student : ${students}">
-            <option th:href="@{~/{path}(path=${student.getName()})}" th:text="${student.getName()}" id="name"></option>
-            </div>
-        </datalist>
-        <input id = "quiz" type="submit" value="Take the quiz!"></input>
-    </form>
+  <div id="user">
+      <p>
+      </p>
+  </div>
 
     </body>
 

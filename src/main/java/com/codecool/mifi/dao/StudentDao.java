@@ -2,7 +2,6 @@ package com.codecool.mifi.dao;
 
 import com.codecool.mifi.model.Student;
 
-import java.util.List;
 import java.util.Stack;
 
 
@@ -11,10 +10,10 @@ import java.util.Stack;
  */
 public interface StudentDao {
 
-    void add(Student student);
+    void add(Student student, Stack stack);
 
-    Student getLast();
+    Student getLast(Stack stack);
 
-    Stack getAll();
+    Stack getAll(String gender);
 
 }
