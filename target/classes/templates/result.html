@@ -21,7 +21,7 @@
               crossorigin="anonymous"/>
         <link rel="stylesheet" type="text/css" href="/css/style.css"/>
 
-
+        <link href="https://fonts.googleapis.com/css?family=Barrio|Gloria+Hallelujah|Indie+Flower|Permanent+Marker" rel="stylesheet"></link>
         <title>Singliton</title>
 
     </head>
@@ -36,15 +36,12 @@
                 <p th:text="${name} + ', you\'re lucky!'"></p>
                 <p>Your hot date is: </p>
             </div>
-            <table>
-                <tr>
-                    <td></td>
-                    <td th:text="' with ' + ${partner}"></td>
-                    <img th:src="'../img/' + ${picture} + '.jpg'"> </img>
-                    <td th:text="' in ' + ${place}"></td>
-                    <td th:text="' at ' + ${time}"></td>
-                </tr>
-            </table>
+
+                    <p th:text="${partner}"></p>
+                    <img th:src="'../img/' + ${picture} + '.jpg'" height="150" width="150"> </img>
+                    <p th:text="' in ' + ${place}"></p>
+                    <p th:text="' at ' + ${time}"></p>
+
 
         </div>
 

@@ -1,16 +1,47 @@
 
-input[type=radio] {
+input[type=radio]:after {
     margin: 20px;
-
+    transform: scale(2);
+    background-color: rgba(255,155,855,0.8) !important;
+    position: relative;
+    border: 2px solid white;
 }
+
 
 input, img {
     margin: 20px;
 }
 
 body {
-    margin: 20px;
+    margin-top: 20px;
+    font-family: 'Indie Flower', cursive;
+    font-size: x-large;
+    font-weight: bold;
 
+}
+
+#title {
+    font-size: xx-large;
+}
+
+#singli {
+    font-size: 200%;
+}
+input[type="submit"], input[type='text'], #user_name, option{
+    background-color: rgba(255,155,855,0.8) !important;
+}
+
+.num {
+    font-size: xx-large;
+    color: #3a3dff;
+}
+form, #user, #title {
+    margin-top: 20px;
+    text-align: center;
+}
+
+#title {
+    margin-top: 40px;
 }
 
 img {
@@ -93,3 +124,39 @@ html,body{
 @keyframes love {
     0%{top:110%}
 }
+
+/*input[type='radio'] {*/
+    /*width: 10px;*/
+    /*height: 10px;*/
+    /*border-radius: 15px;*/
+    /*position: relative;*/
+    /*background-color: rgba(255,155,855,0.8) ;*/
+    /*content: '';*/
+    /*display: inline-block;*/
+    /*visibility: visible;*/
+    /*border: 2px solid white;*/
+/*}*/
+
+/*input[type='radio']:before {*/
+    /*width: 10px;*/
+    /*height: 10px;*/
+    /*border-radius: 15px;*/
+    /*position: relative;*/
+    /*background-color: rgba(255,155,855,0.8) ;*/
+    /*content: '';*/
+    /*display: inline-block;*/
+    /*visibility: visible;*/
+    /*border: 2px solid white;*/
+/*}*/
+
+/*input[type='radio']:checked:before {*/
+    /*width: 10px;*/
+    /*height: 10px;*/
+    /*border-radius: 15px;*/
+    /*position: relative;*/
+    /*background-color: #3a3dff ;*/
+    /*content: '';*/
+    /*display: inline-block;*/
+    /*visibility: visible;*/
+    /*border: 2px solid white;*/
+/*}*/
