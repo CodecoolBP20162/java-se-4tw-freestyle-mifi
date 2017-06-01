@@ -1,7 +1,6 @@
 package com.codecool.mifi.controller;
 
 import com.codecool.mifi.model.DateController;
-import com.codecool.mifi.model.Heart;
 import com.codecool.mifi.model.Student;
 import com.codecool.mifi.model.User;
 import spark.ModelAndView;
