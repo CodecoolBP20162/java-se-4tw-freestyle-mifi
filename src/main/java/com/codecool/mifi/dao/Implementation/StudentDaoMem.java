@@ -30,9 +30,9 @@ public class StudentDaoMem implements StudentDao {
 
     @Override
     public Stack getAll(String gender) {
-        if (gender == "female") {
+        if (gender.equals("female")) {
             return femaleStack;
-        }else{
+        } else {
             return maleStack;
         }
     }

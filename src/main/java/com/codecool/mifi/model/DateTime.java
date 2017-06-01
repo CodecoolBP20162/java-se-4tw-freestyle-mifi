@@ -1,4 +1,5 @@
 package com.codecool.mifi.model;
+
 /**
  * Created by marti on 2017.05.31..
  */
@@ -14,6 +15,6 @@ public class DateTime {
 
     @Override
     public String toString() {
-        return  dateTime;
+        return dateTime;
     }
 }

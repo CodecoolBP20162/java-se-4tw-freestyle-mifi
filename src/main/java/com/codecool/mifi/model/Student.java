@@ -11,7 +11,6 @@ public class Student {
     private String picture;
 
 
-
     public Student(String name, String gender, CcClass ccClass, String picture) {
         this.name = name;
         this.gender = gender;

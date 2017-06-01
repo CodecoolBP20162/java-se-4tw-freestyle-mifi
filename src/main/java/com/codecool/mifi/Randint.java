@@ -35,11 +35,11 @@ public class Randint {
 
         get("/", Controller::renderPage, templateEngine);
 
-        get("/quiz",  Controller::renderQuiz, templateEngine);
+        get("/quiz", Controller::renderQuiz, templateEngine);
 
-        get("/result",  Controller::renderResult, templateEngine);
+        get("/result", Controller::renderResult, templateEngine);
 
-        get("/result/:name",  Controller::renderResult, templateEngine);
+        get("/result/:name", Controller::renderResult, templateEngine);
 
         enableDebugScreen();
     }

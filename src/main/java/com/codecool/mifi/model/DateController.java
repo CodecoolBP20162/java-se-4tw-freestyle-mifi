@@ -60,15 +60,15 @@ public class DateController {
         locationList.add(new Location("Kitchen"));
         locationList.add(new Location("Meeting Room"));
     }
-    
+
     private DateTime generateDateTime() {
         populateDateTimeList();
         Random random = new Random();
         int randomDateTime = random.nextInt(dateTimeList.size());
         return dateTimeList.get(randomDateTime);
-        
+
     }
-    
+
     private Location generateLocation() {
         populateLocationList();
         Random random = new Random();
@@ -77,8 +77,7 @@ public class DateController {
     }
 
     public static String read(String filePath) throws FileNotFoundException {
-        String content = new Scanner(new File(filePath)).useDelimiter("\\Z").next();
-        return content;
+        return new Scanner(new File(filePath)).useDelimiter("\\Z").next();
     }
 
     public static List<Student> getStudentList() throws FileNotFoundException {
@@ -89,7 +88,7 @@ public class DateController {
             String gender = student.split(",")[1];
             String picture = student.split(",")[2];
 
-            studentList.add(new Student(name,gender,new CcClass("Budapest",2),picture));
+            studentList.add(new Student(name, gender, new CcClass("Budapest", 2), picture));
         }
         return studentList;
     }
@@ -99,18 +98,18 @@ public class DateController {
         Random random = new Random();
         List<Integer> randomIndexList = new ArrayList<>();
         int counter = 0;
-        while (counter < studentList.size()-1) {
+        while (counter < studentList.size() - 1) {
             int randomIndex = random.nextInt(studentList.size());
             if (!randomIndexList.contains(randomIndex)) {
                 randomIndexList.add(randomIndex);
                 if (studentList.get(randomIndex).getGender().equals("female")) {
                     studentDaoMem.add(studentList.get(randomIndex), studentDaoMem.getAll("female"));
                     counter++;
-                }else{
+                } else {
                     studentDaoMem.add(studentList.get(randomIndex), studentDaoMem.getAll("male"));
                     counter++;
                 }
-            }else {
+            } else {
                 continue;
             }
         }
@@ -120,19 +119,18 @@ public class DateController {
     private Student generatePartner(User user) throws FileNotFoundException {
         populateStack(getStudentList());
         Stack partnerStack;
-        if (user.getGender().equals("female")){
+        if (user.getGender().equals("female")) {
             partnerStack = populateStack(getStudentList()).getAll("male");
-        }else{
+        } else {
             partnerStack = populateStack(getStudentList()).getAll("female");
         }
         if (user.getName().equals("Péter 'Pepe' Szarka")) {
-            return new Student("Olivér Kocsis", "male", new CcClass("Budapest", 2 ),"14");
+            return new Student("Olivér Kocsis", "male", new CcClass("Budapest", 2), "14");
         }
         Random random = new Random();
         int randomPartner = random.nextInt(partnerStack.size());
         return (Student) partnerStack.get(randomPartner);
     }
-
 
 
     @Override

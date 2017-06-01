@@ -26,7 +26,7 @@ public class Controller {
     }
 
     public static ModelAndView renderQuiz(Request req, Response res) {
-        name =  req.queryParams("students");
+        name = req.queryParams("students");
         Map<String, Object> params = new HashMap<>();
         params.put("name", name);
         return new ModelAndView(params, "quiz");
@@ -34,7 +34,7 @@ public class Controller {
 
     public static ModelAndView renderResult(Request req, Response res) throws FileNotFoundException {
         List<Student> students = DateController.getStudentList();
-        for (Student student: students) {
+        for (Student student : students) {
             if (student.getName().equals(name)) {
                 gender = student.getGender();
             }
@@ -47,7 +47,6 @@ public class Controller {
         params.put("place", date.getPlace().toString());
         params.put("partner", date.getPartner().toString());
         params.put("picture", date.getPartner().getPicture());
-
         return new ModelAndView(params, "result");
     }
 
