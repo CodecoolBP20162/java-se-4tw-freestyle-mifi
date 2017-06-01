@@ -30,7 +30,6 @@ public class Controller {
         name =  req.queryParams("students");
         Map<String, Object> params = new HashMap<>();
         params.put("name", name);
-        System.out.println(name);
         return new ModelAndView(params, "quiz");
     }
 

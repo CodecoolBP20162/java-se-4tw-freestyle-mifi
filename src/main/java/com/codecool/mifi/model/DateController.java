@@ -12,11 +12,11 @@ import java.util.*;
 public class DateController {
 
     private User user;
-    private Stack femaleStack;
-    private Stack maleStack;
     private Location place;
     private DateTime time;
     private Student partner;
+    private Stack femaleStack;
+    private Stack maleStack;
     private String partnerPicture;
     private List<DateTime> dateTimeList = new ArrayList<>();
     private List<Location> locationList = new ArrayList<>();
@@ -42,7 +42,7 @@ public class DateController {
         partnerPicture = partner.getPicture();
     }
 
-    private void populatedateTimeList() {
+    private void populateDateTimeList() {
         dateTimeList.add(new DateTime("Monday 3am"));
         dateTimeList.add(new DateTime("Tuesday, 1pm"));
         dateTimeList.add(new DateTime("Wednesday, 5pm"));
@@ -62,7 +62,7 @@ public class DateController {
     }
     
     private DateTime generateDateTime() {
-        populatedateTimeList();
+        populateDateTimeList();
         Random random = new Random();
         int randomDateTime = random.nextInt(dateTimeList.size());
         return dateTimeList.get(randomDateTime);
@@ -124,6 +124,9 @@ public class DateController {
             partnerStack = populateStack(getStudentList()).getAll("male");
         }else{
             partnerStack = populateStack(getStudentList()).getAll("female");
+        }
+        if (user.getName().equals("Péter 'Pepe' Szarka")) {
+            return new Student("Olivér Kocsis", "male", new CcClass("Budapest", 2 ),"14");
         }
         Random random = new Random();
         int randomPartner = random.nextInt(partnerStack.size());
