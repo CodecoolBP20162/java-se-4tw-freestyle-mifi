@@ -6,20 +6,45 @@
         <meta charset="utf-8" />
         <meta name="author" content="Codecool" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <script src="https://code.jquery.com/jquery-3.1.1.min.js"
+                integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+
+        <!-- Latest compiled and minified JavaScript -->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+                integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+                crossorigin="anonymous"></script>
+
+        <!-- Latest compiled and minified CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+              integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous" />
+        <link rel="stylesheet" type="text/css" href="/css/style.css" />
+        <link href="https://fonts.googleapis.com/css?family=Barrio|Gloria+Hallelujah|Indie+Flower|Permanent+Marker" rel="stylesheet"></link>
 
         <title>Singliton</title>
 
     </head>
-    <body>
-
-    <div>
-    <li th:each="heart : ${hearts}">
-        <strong th:text="${heart.color}"> </strong>
-        <p th:text="${heart.quantity}"> </p>
-    </li>
-
+    <body id="index-body">
+    <div id="title">
+        <p id="singli">Singliton</p>
+        <p>Find your CC partner! </p>
     </div>
+
+    <form action="/quiz">
+        <label>Choose yourself: </label>
+        <input id="user_name" name="students" list="students" placeholder="Select"></input>
+        <datalist id="students">
+            <div th:each="student : ${students}">
+            <option th:href="@{~/{path}(path=${student.getName()})}" th:text="${student.getName()}" id="name"></option>
+            </div>
+        </datalist>
+        <input id = "quiz" type="submit" value="Take the quiz!"></input>
+    </form>
+
     </body>
 
 </div>
+
+<footer>
+    <script type="text/javascript" src="../js/main.js"></script>
+</footer>
 </html>
