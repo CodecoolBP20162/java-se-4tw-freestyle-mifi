@@ -17,15 +17,29 @@ public class DateController {
     private Location place;
     private DateTime time;
     private Student partner;
+    private String partnerPicture;
     private List<DateTime> dateTimeList = new ArrayList<>();
     private List<Location> locationList = new ArrayList<>();
     public static List<Student> studentList = new ArrayList<>();
+
+    public Location getPlace() {
+        return place;
+    }
+
+    public DateTime getTime() {
+        return time;
+    }
+
+    public Student getPartner() {
+        return partner;
+    }
 
     public DateController(User user) throws FileNotFoundException {
         this.user = user;
         time = generateDateTime();
         partner = generatePartner(user);
         place = generateLocation();
+        partnerPicture = partner.getPicture();
     }
 
     private void populatedateTimeList() {
@@ -73,7 +87,9 @@ public class DateController {
         for (String student : splitLines) {
             String name = student.split(",")[0];
             String gender = student.split(",")[1];
-            studentList.add(new Student(name,gender,new CcClass("Budapest",2)));
+            String picture = student.split(",")[2];
+
+            studentList.add(new Student(name,gender,new CcClass("Budapest",2),picture));
         }
         return studentList;
     }
@@ -104,7 +120,7 @@ public class DateController {
     private Student generatePartner(User user) throws FileNotFoundException {
         populateStack(getStudentList());
         Stack partnerStack;
-        if (user.getGender() == "female"){
+        if (user.getGender().equals("female")){
             partnerStack = populateStack(getStudentList()).getAll("male");
         }else{
             partnerStack = populateStack(getStudentList()).getAll("female");
@@ -113,6 +129,8 @@ public class DateController {
         int randomPartner = random.nextInt(partnerStack.size());
         return (Student) partnerStack.get(randomPartner);
     }
+
+
 
     @Override
     public String toString() {

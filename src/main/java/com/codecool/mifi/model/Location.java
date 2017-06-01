@@ -14,8 +14,6 @@ public class Location {
 
     @Override
     public String toString() {
-        return "Location{" +
-                "location='" + location + '\'' +
-                '}';
+        return location;
     }
 }

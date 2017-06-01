@@ -1,0 +1,18 @@
+
+input[type=radio] {
+    margin: 20px;
+    margin-bottom: 20px;
+
+}
+
+input, img {
+    margin: 20px;
+}
+
+body {
+    margin: 20px;
+}
+
+img {
+    border-radius: 100%;
+}

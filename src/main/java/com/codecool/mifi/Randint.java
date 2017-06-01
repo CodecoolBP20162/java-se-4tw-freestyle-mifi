@@ -26,10 +26,6 @@ public class Randint {
 
     public static void main(String[] args) throws FileNotFoundException {
 
-        User user = new User("Liza","female");
-        DateController date = new DateController(user);
-        System.out.println(date.toString());
-
         TemplateEngine templateEngine = new ThymeleafTemplateEngine();
 
         // default server settings
@@ -38,16 +34,11 @@ public class Randint {
         port(8888);
 
         get("/", Controller::renderPage, templateEngine);
-        //get("/index", Controller::renderQuiz, templateEngine);
 
         get("/quiz",  Controller::renderQuiz, templateEngine);
-        //get("/quizz",  Controller::renderQuiz, templateEngine);
-
-        get("/quiz/user/:students",  Controller::renderQuiz, templateEngine);
-
-        //get("/user/:name",  Controller::renderPage, templateEngine);
 
         get("/result",  Controller::renderResult, templateEngine);
+
         get("/result/:name",  Controller::renderResult, templateEngine);
 
         enableDebugScreen();

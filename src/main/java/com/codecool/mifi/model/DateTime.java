@@ -14,8 +14,6 @@ public class DateTime {
 
     @Override
     public String toString() {
-        return "DateTime{" +
-                "dateTime='" + dateTime + '\'' +
-                '}';
+        return  dateTime;
     }
 }
