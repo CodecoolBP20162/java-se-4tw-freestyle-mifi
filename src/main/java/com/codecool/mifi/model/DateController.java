@@ -68,7 +68,7 @@ public class DateController {
     }
 
     public static List<Student> getStudentList() throws FileNotFoundException {
-        String lines = read("/home/marti/Codecool/java-se-4tw-freestyle-mifi/src/main/resources/Students.csv");
+        String lines = read("Students.csv");
         String[] splitLines = lines.split("\n");
         for (String student : splitLines) {
             String name = student.split(",")[0];

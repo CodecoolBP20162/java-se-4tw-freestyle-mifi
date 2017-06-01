@@ -16,6 +16,8 @@ import java.util.*;
  */
 public class Controller {
 
+    private static String name;
+
     public static ModelAndView renderPage(Request req, Response res) throws FileNotFoundException {
 //        List<Heart> hearts = new ArrayList<>();
 //        hearts.add(new Heart("purple", 2));
@@ -24,7 +26,7 @@ public class Controller {
 //        params.put("hearts", hearts);
         //String name = req.params(":name");
         //req.session().attribute("name", name);
-        String name = req.params(":students");
+        String name = req.params("students");
         System.out.println(name);
         List<Student> students = DateController.getStudentList();
         Map<String, Object> params = new HashMap<>();
@@ -33,8 +35,7 @@ public class Controller {
     }
 
     public static ModelAndView renderQuiz(Request req, Response res) {
-        //req.session().attribute("name", );
-        String name = req.params(":students");
+        name =  req.queryParams("students");
         Map<String, Object> params = new HashMap<>();
         params.put("name", name);
         System.out.println(name);
@@ -44,7 +45,6 @@ public class Controller {
     public static ModelAndView renderResult(Request req, Response res) throws FileNotFoundException {
         //User user = new User();
         //DateController date = new DateController(user);
-        String name = req.params(":name");
         Map<String, Object> params = new HashMap<>();
         params.put("name", name);
         return new ModelAndView(params, "result");
